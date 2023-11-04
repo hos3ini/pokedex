@@ -45,7 +45,7 @@ const ListContainer = styled.View`
   padding: 14px 0px 14px 10px;
   height: 340px;
   width: 100%;
-  background: #fff;
+  background: #e4e4e4;
   color: #333;
 `;
 

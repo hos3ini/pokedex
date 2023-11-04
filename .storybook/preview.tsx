@@ -15,7 +15,7 @@ export const decorators = [
     <View
       style={{
         flex: 1,
-        backgroundColor: '#383838',
+        backgroundColor: '#dfdfdf',
         padding: 8,
       }}
     >

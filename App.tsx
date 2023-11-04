@@ -1,12 +1,10 @@
+import React from 'react';
 import Constants from 'expo-constants';
 import { StyleSheet, Text, View } from 'react-native';
+import { Home } from './src/screens/Home';
 
 function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
+  return <Home />;
 }
 
 let AppEntryPoint = App;
