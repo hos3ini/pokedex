@@ -49,6 +49,7 @@ const getStories = () => {
   return {
     "./src/stories/Button.stories.js": require("../src/stories/Button.stories.js"),
     "./src/stories/Card.stories.js": require("../src/stories/Card.stories.js"),
+    "./src/stories/HorizentalList.stories.js": require("../src/stories/HorizentalList.stories.js"),
   };
 };
 

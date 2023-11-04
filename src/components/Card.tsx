@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { SvgProps } from 'react-native-svg';
 
 type TText = {
   color: string;
@@ -10,11 +11,11 @@ type TTypes = {
   name: string;
 };
 
-type TCard = {
+export type TCard = {
   name: string;
   spriteUrl: string;
   spriteBack: string;
-  Icon: React.FC;
+  Icon: React.FC<SvgProps>;
   types: TTypes[];
   details: string[];
 };
@@ -23,11 +24,11 @@ export const Card = ({ name, details, spriteUrl, spriteBack, Icon, types }: TCar
   return (
     <CardContainer>
       <SpritesBack source={{ uri: spriteBack }}>
-        <Sprite source={{ uri: spriteUrl }} />
+        <Sprite source={{ uri: spriteUrl }} style={{ width: 200, height: 200 }} />
       </SpritesBack>
       <CardData>
         <CardIcon>
-          <Icon />
+          <Icon width={40} height={40} />
         </CardIcon>
         <TypesWrapper>
           {types.map((t, index) => (
@@ -47,32 +48,28 @@ export const Card = ({ name, details, spriteUrl, spriteBack, Icon, types }: TCar
 
 const CardContainer = styled.TouchableOpacity`
   display: flex;
-  margin: 24px 0;
+  flex-direction: row;
+  margin: 24px 10px;
   border-radius: 16px;
-  max-width: 350px;
+  width: 350px;
   height: 220px;
   background: #fff;
   box-shadow: 0 16px 40px rgba(34, 35, 58, 0.25);
-  flex-direction: row;
   overflow: hidden;
-  cursor: default;
   color: #333;
 `;
 
 const SpritesBack = styled.ImageBackground`
-  flex: 2;
-  position: relative;
+  flex: 1;
   height: 100%;
   width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Sprite = styled.Image`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: auto;
-`;
+const Sprite = styled.Image``;
 
 const CardData = styled.View`
   flex: 1;
@@ -85,6 +82,10 @@ const CardData = styled.View`
 
 const CardIcon = styled.View`
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   top: 16px;
   left: -32px;
   border: 6px solid #fff;

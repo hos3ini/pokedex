@@ -4,7 +4,7 @@ import { Card } from '../components/Card';
 
 import { colors } from '../utils/pokemonTypeColors';
 
-import Grass from '../assets/icons/grass.svg';
+import { IconFiles, IconNames } from '../utils/iconNames';
 
 const CardData = {
   title: 'CardData',
@@ -12,9 +12,11 @@ const CardData = {
   args: {
     name: 'pokemon',
     details: ['detail1', 'detail2', 'detail3'],
-    spriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/100.svg',
-    spriteBack: 'https://kai-tw.github.io/PokeCard/backgrounds/grass.png',
-    Icon: Grass,
+    // todo add pokemon id to below url
+    spriteUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${'1'}.png`,
+    // todo add pokemon first type name to these 4 below
+    spriteBack: `https://kai-tw.github.io/PokeCard/backgrounds/${'grass'}.png`,
+    Icon: IconFiles[IconNames['grass']],
     types: [
       { name: 'grass', textColor: colors['grass'] },
       { name: 'poison', textColor: colors['poison'] },
@@ -32,9 +34,3 @@ const CardData = {
 export default CardData;
 
 export const Basic = {};
-
-// export const AnotherExample = {
-//   args: {
-//     text: 'Another example',
-//   },
-// };
