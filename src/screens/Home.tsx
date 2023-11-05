@@ -2,23 +2,26 @@ import { HorizontalList } from '../components/HorizontalList';
 import React, { useState } from 'react';
 import { styled } from 'styled-components/native';
 import { SearchBar } from '../components/SearchBar';
+import { ScrollView } from 'react-native';
 
 export const Home = () => {
   const [searchText, setSearchText] = useState<string>();
   return (
-    <HomeContainer>
-      <SearchBar searchText={searchText} setSearchText={setSearchText} />
-      {!searchText && <HorizontalList title='Discover New' />}
-      <HorizontalList title='Visited Lately' />
-      <HorizontalList title='Fav' />
-      {searchText && <HorizontalList title='Discover New' />}
-    </HomeContainer>
+    <ScrollView>
+      <HomeContainer>
+        <SearchBar searchText={searchText} setSearchText={setSearchText} />
+        {!searchText && <HorizontalList title='Discover New' />}
+        <HorizontalList title='Visited Lately' />
+        <HorizontalList title='Fav' />
+        {searchText && <HorizontalList title='Discover New' />}
+      </HomeContainer>
+    </ScrollView>
   );
 };
 
 const HomeContainer = styled.View`
   width: 100%;
-  padding: 320px 0;
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
